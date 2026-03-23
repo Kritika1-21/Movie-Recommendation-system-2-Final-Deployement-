@@ -14,7 +14,7 @@ try:
     similarity = pickle.load(open("similarity_movies.pkl", "rb"))
 
 except Exception as e:
-    st.error("Pickle file not loaded")
+    st.error(e)
     st.stop()
 
 
