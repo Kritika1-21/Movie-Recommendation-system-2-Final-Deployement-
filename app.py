@@ -2,37 +2,7 @@ import pickle
 import streamlit as st
 import requests
 import pandas as pd
-import gdown
 import os
-
-
-# ---------------- DOWNLOAD FROM GOOGLE DRIVE ----------------
-
-def download(file_id, output):
-
-    if not os.path.exists(output):
-
-        url = f"https://drive.google.com/uc?id={file_id}"
-
-        st.write(f"Downloading {output}...")
-
-        try:
-            gdown.download(url, output, quiet=False)
-        except Exception as e:
-            st.error(f"Download failed: {e}")
-
-
-# Google Drive files
-
-download(
-    "1AMSfx-pQATFlJ-2Sm37QuxXByF8uv0Ih",
-    "similarity_movies.pkl"
-)
-
-download(
-    "1yaNKoljmyVCV7-pgaO-ulhWaAbdheOat",
-    "movie_recommendation.pkl"
-)
 
 
 # ---------------- LOAD PICKLE ----------------
